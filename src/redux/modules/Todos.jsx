@@ -66,7 +66,7 @@ const Todos = (state = initialState, action) => {
       return {
         ...state,
         todos: state.todos.map((todo) =>
-          todo.id === id ? { ...todo, check: !todo.check } : todo
+          todo.id === action.payload ? { ...todo, check: !todo.check } : todo
         ),
       };
     case GET_TODO_ID:
