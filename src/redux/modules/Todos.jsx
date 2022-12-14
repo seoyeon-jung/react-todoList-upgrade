@@ -39,11 +39,12 @@ export const getTodoID = (payload) => {
 
 // initial state (기능 작동을 위한 초기 setting - 나중에 삭제)
 const initialState = {
-  todos: [
+  todos: [],
+  todo: [
     {
-      id: "1",
-      title: "React",
-      text: "숙련 과제 하기",
+      id: "0",
+      title: "",
+      text: "",
       check: false,
     },
   ],

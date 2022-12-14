@@ -31,36 +31,21 @@ const InputBtn = styled.button`
 `;
 
 const TodoInput = () => {
-  const dispatch = useDispatch();
   const id = uuidv4();
-  const [todo, setTodo] = useState([]);
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
 
-  // changeHandler (title, text change)
-  const changeTitleInput = (e) => {
-    const { value } = e.target;
-    setTitle(value);
-  };
+  const dispatch = useDispatch();
 
-  const changeTextInput = (e) => {
-    const { value } = e.target;
-    setText(value);
-  };
+  const [todo, setTodo] = useState({
+    id: uuidv4(),
+    title: "",
+    text: "",
+    check: false,
+  });
 
-  // onAdd (input에서 입력받은 값을 새로운 item으로 추가)
-  const onAdd = (title, text) => {
-    setTodo((prev) => {
-      return [
-        ...prev,
-        {
-          id: uuidv4(),
-          title,
-          text,
-          check: false,
-        },
-      ];
-    });
+  // changehandler
+  const onChange = (e) => {
+    const { name, value } = e.target;
+    setTodo({ ...todo, [name]: value });
   };
 
   // onSubmit
@@ -68,32 +53,35 @@ const TodoInput = () => {
     e.preventDefault(); // 새로고침 방지
 
     // 입력칸 공백 방지
-    if (!text || !title) {
+    if (!todo.text || !todo.title) {
       alert("제목과 내용을 모두 입력하세요.");
       return;
     }
 
     dispatch(addTodo({ ...todo, id }));
 
-    onAdd(title, text);
-
-    // 입력 후 다시 공백으로
-    setTitle("");
-    setText("");
+    setTodo({
+      id: uuidv4(),
+      title: "",
+      text: "",
+      check: false,
+    });
   };
 
   return (
     <InputBox>
       <InputText
         type="text"
-        value={title}
-        onChange={changeTitleInput}
+        name="title"
+        value={todo.title}
+        onChange={onChange}
         placeholder="제목"
       />
       <InputText
         type="text"
-        value={text}
-        onChange={changeTextInput}
+        name="text"
+        value={todo.text}
+        onChange={onChange}
         placeholder="내용"
       />
       <InputBtn type="submit" onClick={onSubmit}>

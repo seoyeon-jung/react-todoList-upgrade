@@ -3,11 +3,10 @@ import styled from "styled-components";
 
 const TodoHeader = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  text-align: center;
   color: #fff;
-  font-size: 50px;
+  font-size: 40px;
 `;
 
 const Header = () => {
