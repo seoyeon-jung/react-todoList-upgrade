@@ -8,20 +8,20 @@ const InputBox = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 `;
 
 const InputText = styled.input`
-  width: 600px;
+  width: 400px;
   height: 15px;
   padding: 7px;
-  margin: 10px;
+  margin: 15px;
 `;
 
 const InputBtn = styled.button`
   border: none;
-  border-radius: 10px;
-  background-color: rgb(132, 149, 250);
+  border-radius: 5px;
+  background-color: rgb(180, 190, 251);
   color: white;
   margin: 10px;
 
@@ -85,7 +85,7 @@ const TodoInput = () => {
         placeholder="내용"
       />
       <InputBtn type="submit" onClick={onSubmit}>
-        추가
+        ➕
       </InputBtn>
     </InputBox>
   );

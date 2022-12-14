@@ -56,7 +56,6 @@ const Text = styled.p`
 const Detail = () => {
   const dispatch = useDispatch();
   const todo = useSelector((state) => state.todos.todo);
-  //console.log(todo);
 
   const { id } = useParams();
   const navigate = useNavigate();
