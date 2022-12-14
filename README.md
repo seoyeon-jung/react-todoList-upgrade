@@ -1,7 +1,7 @@
 # React로 TodoList 만들기
-### 2022.12.13 ~
+### 2022.12.13 ~ 2022.12.14
 - React로 TodoList 만들기
-- 이전 과제를 `react-router-dom`, `styled-components`, `redux`를 사용해서 다시 만들어보기
+- [이전 과제](https://github.com/seoyeon-jung/react-todolist)를 `react-router-dom`, `styled-components`, `redux`를 사용해서 다시 만들어보기
 - 내일배움캠프 4기 리액트 숙련과정 개인 과제
 <br>
 <br>
@@ -40,6 +40,20 @@
 <br>
 
 ## 폴더 구조
+![KakaoTalk_20221214_172232670](https://user-images.githubusercontent.com/95006849/207543588-1efbc554-8984-4ee8-bacc-4c341a4ff828.jpg)
 <br>
 <br>
+
 ## Error Log
+- `자세히 보기` 클릭 시 id의 페이지로 넘어가지 않는 문제
+
+![image](https://user-images.githubusercontent.com/95006849/207544251-3f5908d3-9906-458f-b31f-2d8f40fd155d.png)
+
+=> `modules` 안에 있는 `Todos.jsx` 파일의 코드인데, 처음에는 `todos`만 작성하고, 초기값으로 사용할 `todo`를 작성하지 않았음
+
+=> 그래서 `todo`를 추가하고 나니 Detail.jsx 파일에서 id 값을 받아 페이지를 이동할 수 있었다
+
+```javascript
+const todo = useSelector((state) => state.todos.todo);
+// 이 부분이 제대로 작동 (콘솔창에 찍어봤음)
+```
