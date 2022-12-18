@@ -14,7 +14,7 @@
 ## 완성된 페이지
 - [오늘 뭐하지?🤔](https://react-todo-list-upgrade.vercel.app/)  << 완성된 페이지 보러가기
 - 실제 구현 모습
-![오늘-뭐하지__-Chrome-2022-12-14-17-40-03](https://user-images.githubusercontent.com/95006849/207548841-e77361b5-643d-4aa6-80a2-47f42cc5853f.gif)
+![오늘-뭐하지__-Chrome-2022-12-14-17-53-33](https://user-images.githubusercontent.com/95006849/207551159-afa54e25-162c-45ab-895e-bd87b23e90a1.gif)
 
 <br>
 <br>
