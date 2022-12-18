@@ -3,6 +3,8 @@ import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../redux/modules/Todos";
 import { v4 as uuidv4 } from "uuid";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const InputBox = styled.form`
   display: flex;
@@ -48,13 +50,16 @@ const TodoInput = () => {
     setTodo({ ...todo, [name]: value });
   };
 
+  // toast
+  // const notify = () => toast("Wow so easy!");
+
   // onSubmit
   const onSubmit = (e) => {
     e.preventDefault(); // 새로고침 방지
 
     // 입력칸 공백 방지
     if (!todo.text || !todo.title) {
-      alert("제목과 내용을 모두 입력하세요.");
+      toast.warning("제목과 내용 모두 입력해주세요!");
       return;
     }
 
@@ -87,6 +92,7 @@ const TodoInput = () => {
       <InputBtn type="submit" onClick={onSubmit}>
         ➕
       </InputBtn>
+      <ToastContainer />
     </InputBox>
   );
 };
